@@ -71,7 +71,7 @@ public final class R {
         public static final int menu_share=0x7f09002c;
         public static final int meta_text_view=0x7f090015;
         public static final int meta_text_view_label=0x7f090014;
-        public static final int openCamera=0x7f090007;
+        public static final int open_camera=0x7f090007;
         public static final int page_number_view=0x7f090024;
         public static final int preview_view=0x7f09000d;
         public static final int query_button=0x7f090022;
@@ -82,7 +82,7 @@ public final class R {
         public static final int result_list_view=0x7f090023;
         public static final int result_view=0x7f09000f;
         public static final int return_scan_result=0x7f090006;
-        public static final int scanResult=0x7f090008;
+        public static final int scan_result=0x7f090008;
         public static final int share_app_button=0x7f090026;
         public static final int share_bookmark_button=0x7f090027;
         public static final int share_clipboard_button=0x7f090029;

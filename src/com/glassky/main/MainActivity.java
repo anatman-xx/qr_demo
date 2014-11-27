@@ -1,7 +1,5 @@
 package com.glassky.main;
 
-import org.apache.commons.lang.StringUtils;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,8 +30,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		openCamera = (Button) findViewById(R.id.openCamera);
-		scanResult = (TextView) findViewById(R.id.scanResult);
+		openCamera = (Button) findViewById(R.id.open_camera);
+		scanResult = (TextView) findViewById(R.id.scan_result);
 
 		openCamera.setOnClickListener(new OnClickListener() {
 			@Override
@@ -66,7 +64,7 @@ public class MainActivity extends Activity {
 	private boolean onCaptureQrCode(String code) {
 		Log.v(LOG_TAG, "Captured QrCode:" + code);
 		
-		if (StringUtils.isBlank(code)) {
+		if (code == null || code.length() == 0) {
 			return false;
 		}
 		
