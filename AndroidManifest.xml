@@ -57,7 +57,7 @@
         android:label="@string/app_name"
         android:logo="@drawable/launcher_icon" >
         <activity
-            android:name="com.glassky.main.MainActivity"
+            android:name="com.glassky.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -219,6 +219,10 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.glassky.activity.ConfirmAuthActivity"
+            android:label="@string/title_activity_confirm_auth" >
         </activity>
     </application>
 
