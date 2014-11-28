@@ -140,5 +140,6 @@
   <string name="wifi_changing_network">Requesting connection to network\u2026</string>
   <string name="wifi_ssid_label">Network Name</string>
   <string name="wifi_type_label">Type</string>
-  <string name="open_camera">OpenCamera</string>
+  <string name="open_camera">Open Camera</string>
+  <string name="simulate_capture">Simulate Capture</string>
 </resources>

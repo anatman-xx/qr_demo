@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
 	private static final Long uid = 1225645781l;
 
 	private Button openCamera;
+	private Button simulateCapture;
 	private TextView scanResult;
 
 	@Override
@@ -31,6 +32,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		openCamera = (Button) findViewById(R.id.open_camera);
+		simulateCapture = (Button) findViewById(R.id.simulate_capture);
 		scanResult = (TextView) findViewById(R.id.scan_result);
 
 		openCamera.setOnClickListener(new OnClickListener() {
@@ -38,6 +40,16 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				Intent openCameraIntent = new Intent(MainActivity.this, CaptureActivity.class);
 				startActivityForResult(openCameraIntent, REQUEST_CAPTURE_QRCODE);
+			}
+		});
+		
+		simulateCapture.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent data = new Intent();
+				data.putExtra("result", "09cde920-93b9-4693-aee3-af2220827bb4|1417083432261|d9a8bcbd");
+				
+				MainActivity.this.onActivityResult(REQUEST_CAPTURE_QRCODE, RESULT_OK, data);
 			}
 		});
 	}
