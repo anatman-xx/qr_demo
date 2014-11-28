@@ -15,7 +15,8 @@ import com.glassky.task.AuthSessionAsyncTask;
 import com.google.zxing.client.android.CaptureActivity;
 
 public class MainActivity extends Activity {
-	private static final int REQUEST_CAPTURE_QRCODE = 0;
+	public static final int REQUEST_CAPTURE_QRCODE = 0;
+	public static final int REQUEST_AUTH_CONFIRMATION = 1;
 
 	private static final String LOG_TAG = "MainActivity";
 	
@@ -25,6 +26,7 @@ public class MainActivity extends Activity {
 
 	private Button openCamera;
 	private Button simulateCapture;
+	private Button simulateConfirmAuth;
 	private TextView scanResult;
 
 	@Override
@@ -34,6 +36,7 @@ public class MainActivity extends Activity {
 
 		openCamera = (Button) findViewById(R.id.open_camera);
 		simulateCapture = (Button) findViewById(R.id.simulate_capture);
+		simulateConfirmAuth = (Button) findViewById(R.id.simulate_confirm_auth);
 		scanResult = (TextView) findViewById(R.id.scan_result);
 
 		openCamera.setOnClickListener(new OnClickListener() {
@@ -53,11 +56,23 @@ public class MainActivity extends Activity {
 				MainActivity.this.onActivityResult(REQUEST_CAPTURE_QRCODE, RESULT_OK, data);
 			}
 		});
+		
+		simulateConfirmAuth.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				Intent simulateConfirmAuthIntent = new Intent(MainActivity.this, ConfirmAuthActivity.class);
+				
+				startActivityForResult(simulateConfirmAuthIntent, REQUEST_AUTH_CONFIRMATION);
+			}
+		});
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+
+		Log.v(LOG_TAG, "Request code:" + requestCode + " Result code:" + resultCode);
+
 		if (requestCode == REQUEST_CAPTURE_QRCODE && resultCode == RESULT_OK) {
 			Bundle bundle = data.getExtras();
 			String result = bundle.getString("result");
@@ -65,6 +80,11 @@ public class MainActivity extends Activity {
 			scanResult.setText(result);
 			
 			onCaptureQrCode(result);
+		} else if (requestCode == REQUEST_AUTH_CONFIRMATION && resultCode == RESULT_OK) {
+			Bundle bundle = data.getExtras();
+			boolean result = bundle.getBoolean("confirmation");
+
+			Log.v(LOG_TAG, "confirmation " + result);
 		}
 	}
 

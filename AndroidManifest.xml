@@ -221,8 +221,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.glassky.activity.AuthSessionActivity"
-            android:label="@string/title_activity_auth_session" >
+            android:name="com.glassky.activity.ConfirmAuthActivity"
+            android:label="@string/title_activity_confirm_auth" >
         </activity>
     </application>
 

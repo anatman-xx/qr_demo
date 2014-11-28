@@ -143,6 +143,9 @@
     <string name="wifi_type_label">Type</string>
     <string name="open_camera">Open Camera</string>
     <string name="simulate_capture">Simulate Capture</string>
-    <string name="title_activity_auth_session">QrLoginAuthSessionActivity</string>
+    <string name="title_activity_confirm_auth">Confirm Auth</string>
     <string name="action_settings">Settings</string>
+    <string name="reject_auth">Reject</string>
+    <string name="confirm_auth">Confirm</string>
+    <string name="simulate_confirm_auth">Simulate Confirm Auth</string>
 </resources>
