@@ -64,6 +64,5 @@ public class AuthSessionAsyncTask extends AsyncTask<Object, Integer, String> {
 	
 	@Override
 	protected void onPostExecute(String result) {
-		Log.v(LOG_TAG, "Response:" + result);
 	}
 }

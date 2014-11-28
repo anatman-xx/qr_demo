@@ -35,6 +35,13 @@ public final class R {
         public static final int viewfinder_mask=0x7f07000a;
     }
     public static final class dimen {
+        /** 
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    
+         */
+        public static final int activity_horizontal_margin=0x7f080002;
+        public static final int activity_vertical_margin=0x7f080003;
         public static final int half_padding=0x7f080001;
         public static final int standard_padding=0x7f080000;
     }
@@ -44,6 +51,7 @@ public final class R {
         public static final int shopper_icon=0x7f020002;
     }
     public static final class id {
+        public static final int action_settings=0x7f09002d;
         public static final int app_picker_list_item_icon=0x7f09000a;
         public static final int app_picker_list_item_label=0x7f09000b;
         public static final int back_button=0x7f09001e;
@@ -62,13 +70,13 @@ public final class R {
         public static final int history_title=0x7f090020;
         public static final int image_view=0x7f09001c;
         public static final int launch_product_query=0x7f090003;
-        public static final int menu_encode=0x7f090030;
-        public static final int menu_help=0x7f09002f;
-        public static final int menu_history=0x7f09002e;
-        public static final int menu_history_clear_text=0x7f090032;
-        public static final int menu_history_send=0x7f090031;
+        public static final int menu_encode=0x7f090031;
+        public static final int menu_help=0x7f090030;
+        public static final int menu_history=0x7f09002f;
+        public static final int menu_history_clear_text=0x7f090033;
+        public static final int menu_history_send=0x7f090032;
         public static final int menu_settings=0x7f09002c;
-        public static final int menu_share=0x7f09002d;
+        public static final int menu_share=0x7f09002e;
         public static final int meta_text_view=0x7f090016;
         public static final int meta_text_view_label=0x7f090015;
         public static final int open_camera=0x7f090007;
@@ -97,28 +105,31 @@ public final class R {
         public static final int viewfinder_view=0x7f09000f;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int app_picker_list_item=0x7f030001;
-        public static final int bookmark_picker_list_item=0x7f030002;
-        public static final int capture=0x7f030003;
-        public static final int encode=0x7f030004;
-        public static final int help=0x7f030005;
-        public static final int history_list_item=0x7f030006;
-        public static final int search_book_contents=0x7f030007;
-        public static final int search_book_contents_header=0x7f030008;
-        public static final int search_book_contents_list_item=0x7f030009;
-        public static final int share=0x7f03000a;
+        public static final int activity_auth_session=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int app_picker_list_item=0x7f030002;
+        public static final int bookmark_picker_list_item=0x7f030003;
+        public static final int capture=0x7f030004;
+        public static final int encode=0x7f030005;
+        public static final int help=0x7f030006;
+        public static final int history_list_item=0x7f030007;
+        public static final int search_book_contents=0x7f030008;
+        public static final int search_book_contents_header=0x7f030009;
+        public static final int search_book_contents_list_item=0x7f03000a;
+        public static final int share=0x7f03000b;
     }
     public static final class menu {
         public static final int activity_main=0x7f0b0000;
-        public static final int capture=0x7f0b0001;
-        public static final int encode=0x7f0b0002;
-        public static final int history=0x7f0b0003;
+        public static final int auth_session=0x7f0b0001;
+        public static final int capture=0x7f0b0002;
+        public static final int encode=0x7f0b0003;
+        public static final int history=0x7f0b0004;
     }
     public static final class raw {
         public static final int beep=0x7f050000;
     }
     public static final class string {
+        public static final int action_settings=0x7f0a0080;
         public static final int app_name=0x7f0a0000;
         public static final int app_picker_name=0x7f0a0001;
         public static final int bookmark_picker_name=0x7f0a0002;
@@ -243,6 +254,7 @@ public final class R {
         public static final int result_wifi=0x7f0a0078;
         public static final int sbc_name=0x7f0a0079;
         public static final int simulate_capture=0x7f0a007e;
+        public static final int title_activity_auth_session=0x7f0a007f;
         public static final int wifi_changing_network=0x7f0a007a;
         public static final int wifi_ssid_label=0x7f0a007b;
         public static final int wifi_type_label=0x7f0a007c;
