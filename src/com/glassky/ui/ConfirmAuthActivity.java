@@ -1,16 +1,21 @@
-package com.glassky.activity;
+package com.glassky.ui;
 
 import com.glassky.main.R;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class ConfirmAuthActivity extends Activity {
+	private static final String TAG = "ConfirmAuthActivity";
+
+	public static final String RESULT_CONFIRMATION = "confirmation";
+
 	private Button confirmAuth;
 	private Button rejectAuth;
 
@@ -25,8 +30,10 @@ public class ConfirmAuthActivity extends Activity {
 		confirmAuth.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				Log.v(TAG, "Confirm auth");
+
 				Intent data = new Intent();
-				data.putExtra("confirmation", true);
+				data.putExtra(RESULT_CONFIRMATION, true);
 
 				ConfirmAuthActivity.this.setResult(RESULT_OK, data);
 				ConfirmAuthActivity.this.finish();
@@ -36,8 +43,10 @@ public class ConfirmAuthActivity extends Activity {
 		rejectAuth.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				Log.v(TAG, "Reject auth");
+
 				Intent data = new Intent();
-				data.putExtra("confirmation", false);
+				data.putExtra(RESULT_CONFIRMATION, false);
 
 				ConfirmAuthActivity.this.setResult(RESULT_OK, data);
 				ConfirmAuthActivity.this.finish();

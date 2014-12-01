@@ -1,4 +1,4 @@
-package com.glassky.task;
+package com.glassky.core;
 
 import java.io.IOException;
 
@@ -9,11 +9,15 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
 
 import android.net.http.AndroidHttpClient;
-import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 
-public class AuthSessionAsyncTask extends AsyncTask<Object, Integer, String> {
-	private static final String LOG_TAG = "AuthSessionAsyncTask";
+import com.glassky.ui.HomeActivity;
+
+public class AuthSessionTask implements Runnable {
+	private static final String TAG = "AuthSessionTask";
 	
 	private String clientId;
 	private String accessToken;
@@ -23,8 +27,10 @@ public class AuthSessionAsyncTask extends AsyncTask<Object, Integer, String> {
 	private Long timeStamp;
 	private String signature;
 	
-	public AuthSessionAsyncTask(String clientId, String accessToken, Long uid, String session, Long timeStamp,
-			String signature) {
+	private Handler handler;
+	
+	public AuthSessionTask(Handler handler, String clientId, String accessToken, Long uid, String session,
+			Long timeStamp, String signature) {
 		this.clientId = clientId;
 		this.accessToken = accessToken;
 		this.uid = uid;
@@ -32,10 +38,16 @@ public class AuthSessionAsyncTask extends AsyncTask<Object, Integer, String> {
 		this.session = session;
 		this.timeStamp = timeStamp;
 		this.signature = signature;
+		
+		this.handler = handler;
 	}
 
 	@Override
-	protected String doInBackground(Object... params) {
+	public void run() {
+		Log.v(TAG, "run:");
+		
+		String result = null;
+
 		try {
 			HttpClient httpClient = AndroidHttpClient.newInstance("");
 			String uri = new StringBuilder("https://ptlogin.4399.com/oauth2/qrAuthorize.do")
@@ -47,23 +59,31 @@ public class AuthSessionAsyncTask extends AsyncTask<Object, Integer, String> {
 				.append("&signature=").append(signature)
 				.toString();
 			
-			Log.v(LOG_TAG, "Request URI:" + uri);
+			Log.v(TAG, "Request URI:" + uri);
 			
 			HttpGet httpGet = new HttpGet(uri);
 			HttpResponse httpResponse = httpClient.execute(httpGet);
 			
-			return EntityUtils.toString(httpResponse.getEntity());
+			result = EntityUtils.toString(httpResponse.getEntity());
 		} catch (ClientProtocolException e) {
-			Log.w(LOG_TAG, "Catch exception:" + e);
+			Log.e(TAG, "Catch exception:" + e);
 		} catch (IOException e) {
-			Log.w(LOG_TAG, "Catch exception:" + e);
+			Log.e(TAG, "Catch exception:" + e);
 		}
+		
+		Log.v(TAG, "Response data:" + result);
 
-		return null;
-	}
-	
-	@Override
-	protected void onPostExecute(String result) {
-		Log.v(LOG_TAG, "Response:" + result);
+		if (result == null || result.length() == 0) {
+			handler.sendEmptyMessage(HomeActivity.TASK_AUTH_SESSION);
+		}
+		
+		Bundle bundle = new Bundle();
+		bundle.putString("result", result);
+		
+		Message message = new Message();
+		message.setData(bundle);
+		message.what = HomeActivity.TASK_AUTH_SESSION;
+		
+		handler.sendMessage(message);
 	}
 }
