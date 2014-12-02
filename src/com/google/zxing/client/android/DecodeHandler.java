@@ -18,7 +18,7 @@ package com.google.zxing.client.android;
 
 import android.graphics.Bitmap;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.MultiFormatReader;

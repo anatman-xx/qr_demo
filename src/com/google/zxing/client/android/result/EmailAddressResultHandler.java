@@ -19,7 +19,7 @@ package com.google.zxing.client.android.result;
 
 import android.app.Activity;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.client.result.EmailAddressParsedResult;
 import com.google.zxing.client.result.ParsedResult;
 

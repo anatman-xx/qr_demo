@@ -24,7 +24,7 @@ import android.widget.ArrayAdapter;
 
 import java.util.List;
 
-import com.glassky.main.R;
+import com.glassky.R;
 
 
 /**

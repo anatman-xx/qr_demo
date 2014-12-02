@@ -20,7 +20,7 @@ import android.view.Display;
 import android.view.MenuInflater;
 import android.view.WindowManager;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.android.Contents;
 import com.google.zxing.client.android.FinishListener;

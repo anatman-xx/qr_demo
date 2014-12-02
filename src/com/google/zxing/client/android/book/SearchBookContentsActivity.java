@@ -40,7 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.client.android.Intents;
 import com.google.zxing.client.android.HttpHelper;
 import com.google.zxing.client.android.LocaleManager;

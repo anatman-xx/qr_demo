@@ -28,7 +28,7 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-import com.glassky.main.R;
+import com.glassky.R;
 
 /**
  * A list item which displays the page number and snippet of this search result.

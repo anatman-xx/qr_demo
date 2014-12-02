@@ -1,6 +1,6 @@
 package com.glassky.ui;
 
-import com.glassky.main.R;
+import com.glassky.R;
 
 import android.os.Bundle;
 import android.app.Activity;

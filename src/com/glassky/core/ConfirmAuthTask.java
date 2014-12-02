@@ -15,8 +15,8 @@ import android.util.Log;
 
 import com.glassky.ui.HomeActivity;
 
-public class AuthSessionTask implements Runnable {
-	private static final String TAG = "AuthSessionTask";
+public class ConfirmAuthTask implements Runnable {
+	private static final String TAG = "ConfirmAuthTask";
 
 	public static final String RESULT_SERVER_RESPONSE = "server_response";
 	
@@ -30,7 +30,7 @@ public class AuthSessionTask implements Runnable {
 	
 	private Handler handler;
 	
-	public AuthSessionTask(Handler handler, String clientId, String accessToken, Long uid, String session,
+	public ConfirmAuthTask(Handler handler, String clientId, String accessToken, Long uid, String session,
 			Long timeStamp, String signature) {
 		this.handler = handler;
 		
@@ -50,7 +50,7 @@ public class AuthSessionTask implements Runnable {
 		AndroidHttpClient httpClient = null;
 		try {
 			httpClient = AndroidHttpClient.newInstance("");
-			String uri = new StringBuilder("https://ptlogin.4399.com/oauth2/qrAuthSession.do")
+			String uri = new StringBuilder("https://ptlogin.4399.com/oauth2/qrConfirmAuth.do")
 				.append("?client_id=").append(clientId)
 				.append("&access_token=").append(accessToken)
 				.append("&uid=").append(uid)
@@ -78,7 +78,7 @@ public class AuthSessionTask implements Runnable {
 		Log.v(TAG, "Response data:" + result);
 
 		if (result == null || result.length() == 0) {
-			handler.sendEmptyMessage(HomeActivity.TASK_AUTH_SESSION);
+			handler.sendEmptyMessage(HomeActivity.TASK_CONFIRM_AUTH);
 			return;
 		}
 		
@@ -87,7 +87,7 @@ public class AuthSessionTask implements Runnable {
 		
 		Message message = new Message();
 		message.setData(bundle);
-		message.what = HomeActivity.TASK_AUTH_SESSION;
+		message.what = HomeActivity.TASK_CONFIRM_AUTH;
 		
 		handler.sendMessage(message);
 	}

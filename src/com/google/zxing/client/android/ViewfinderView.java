@@ -16,7 +16,7 @@
 
 package com.google.zxing.client.android;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.client.android.camera.CameraManager;
 

@@ -16,7 +16,7 @@
 
 package com.google.zxing.client.android;
 
-import com.glassky.main.R;
+import com.glassky.R;
 
 import android.app.Activity;
 import android.content.Intent;

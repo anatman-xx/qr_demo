@@ -28,7 +28,7 @@ import android.util.Log;
 
 import java.io.IOException;
 
-import com.glassky.main.R;
+import com.glassky.R;
 
 /**
  * Manages beeps and vibrations for {@link CaptureActivity}.

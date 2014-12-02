@@ -22,7 +22,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.BitmapFactory;
 import android.provider.Browser;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;

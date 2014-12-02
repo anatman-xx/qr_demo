@@ -26,7 +26,7 @@ import android.preference.PreferenceScreen;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.glassky.main.R;
+import com.glassky.R;
 
 /**
  * The main settings activity.

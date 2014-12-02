@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.glassky.main.R;
+import com.glassky.R;
 
 /**
  * Loads a list of packages installed on the device asynchronously.
