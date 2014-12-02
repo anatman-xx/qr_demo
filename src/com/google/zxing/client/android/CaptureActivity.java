@@ -16,7 +16,7 @@
 
 package com.google.zxing.client.android;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.Result;

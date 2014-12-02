@@ -17,7 +17,7 @@
 package com.google.zxing.client.android.result;
 
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.client.result.AddressBookParsedResult;
 import com.google.zxing.client.result.ParsedResult;
 

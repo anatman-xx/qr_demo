@@ -23,7 +23,7 @@ import java.util.Collection;
 import android.content.Context;
 import android.widget.TextView;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.client.android.HttpHelper;
 import com.google.zxing.client.android.LocaleManager;
 import org.json.JSONArray;

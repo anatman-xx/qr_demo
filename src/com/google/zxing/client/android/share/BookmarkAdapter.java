@@ -17,7 +17,7 @@
 package com.google.zxing.client.android.share;
 
 
-import com.glassky.main.R;
+import com.glassky.R;
 
 import android.content.Context;
 import android.database.Cursor;

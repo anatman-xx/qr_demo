@@ -18,7 +18,7 @@ package com.google.zxing.client.android.encode;
 
 import android.provider.ContactsContract;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;

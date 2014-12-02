@@ -18,7 +18,7 @@ package com.google.zxing.client.android.share;
 
 import android.provider.ContactsContract;
 
-import com.glassky.main.R;
+import com.glassky.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.android.Contents;
 import com.google.zxing.client.android.Intents;
