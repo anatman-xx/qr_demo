@@ -26,8 +26,8 @@ public class HomeActivity extends Activity {
 	private static final String TAG = "HomeActivity";
 	
 	private static final String clientId = "test";
-	private static final String accessToken = "306de38c34ce488ff87f519c095417c1";
-	private static final Long uid = 1225645781l;
+	private static final String accessToken = "744a48b7c8f42a136ba0f12b38ed1eb6";
+	private static final Long uid = 1422130484l;
 
 	public static final int ACTIVITY_CAPTURE = 0;
 	public static final int ACTIVITY_CONFIRM_AUTH = 1;
